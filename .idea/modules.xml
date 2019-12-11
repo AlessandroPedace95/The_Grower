@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataAccessLayer/DataAccessLayer.iml" filepath="$PROJECT_DIR$/DataAccessLayer/DataAccessLayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PresentationLayer/PresentationLayer.iml" filepath="$PROJECT_DIR$/PresentationLayer/PresentationLayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ServiceLayer/ServiceLayer.iml" filepath="$PROJECT_DIR$/ServiceLayer/ServiceLayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/The Grower.iml" filepath="$PROJECT_DIR$/The Grower.iml" />
+    </modules>
+  </component>
+</project>
