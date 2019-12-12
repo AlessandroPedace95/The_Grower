@@ -11,6 +11,11 @@ import java.util.Collection;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
-    @Query("SELECT c FROM Client c WHERE c.balance > 10")
+    @Query("SELECT c FROM Client c WHERE c.balance >= 10 ")
     Collection<Client> findRichClients();
+
+    @Query("select b.client  from Booking b where  b.land.company.companyName = 'NTT'")
+    Collection<Client> findNTTClients();
+
+
 }
