@@ -1,4 +1,4 @@
-package entityTest;
+package configuration;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
