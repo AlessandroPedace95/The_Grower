@@ -7,6 +7,7 @@ import repository.ClientRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ClientService {
@@ -18,7 +19,7 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    public Client getClientById(long id) {
+    public Client getClientById(UUID id) {
         return clientRepository.getOne(id);
     }
 
@@ -26,7 +27,9 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public void deleteClient(long id) {
+    public void deleteClientById(UUID id) {
         clientRepository.deleteById(id);
     }
+
+    public void deleteClient(Client client) {clientRepository.delete(client);}
 }

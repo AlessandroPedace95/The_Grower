@@ -7,6 +7,8 @@ import repository.VegetableRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
+
 @Service
 public class VegetableService {
     @Autowired
@@ -16,7 +18,7 @@ public class VegetableService {
         return vegetableRepository.save(vegetable);
     }
 
-    public Vegetable getVegetableById(int id) {
+    public Vegetable getVegetableById(UUID id) {
         return vegetableRepository.getOne(id);
     }
 
@@ -24,7 +26,9 @@ public class VegetableService {
         return vegetableRepository.findAll();
     }
 
-    public void deleteVegetable(int id) {
+    public void deleteVegetableById(UUID id) {
         vegetableRepository.deleteById(id);
     }
+
+    public void deleteVegetable(Vegetable vegetable) { vegetableRepository.delete(vegetable);}
 }

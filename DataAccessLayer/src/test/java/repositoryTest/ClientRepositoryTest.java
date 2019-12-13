@@ -47,8 +47,8 @@ public class ClientRepositoryTest {
                 .taxCode("PDCLSN95S25D086X")
                 .balance(9)
                 .build();
-        clientRepository.saveAndFlush(client1);
-        clientRepository.saveAndFlush(client2);
+        clientRepository.save(client1);
+        clientRepository.save(client2);
         //ACT
         Collection<Client> richClients = clientRepository.findRichClients();
 

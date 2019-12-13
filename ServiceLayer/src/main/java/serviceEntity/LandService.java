@@ -7,17 +7,18 @@ import repository.LandRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class LandService {
     @Autowired
     private LandRepository landRepository;
 
-    public Land createLand(@Valid Land terreno) {
-        return landRepository.save(terreno);
+    public Land createLand(@Valid Land land) {
+        return landRepository.save(land);
     }
 
-    public Land getLandById(long id) {
+    public Land getLandById(UUID id) {
         return landRepository.getOne(id);
     }
 
@@ -25,7 +26,9 @@ public class LandService {
         return landRepository.findAll();
     }
 
-    public void deleteLand(long id) {
+    public void deleteLandById(UUID id) {
         landRepository.deleteById(id);
     }
+
+    public void deleteLand(Land land) {landRepository.delete(land); }
 }

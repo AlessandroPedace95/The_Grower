@@ -7,6 +7,7 @@ import repository.CompanyRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CompanyService {
@@ -17,7 +18,7 @@ public class CompanyService {
         return companyRepository.save(azienda);
     }
 
-    public Company getCompanyById(long id) {
+    public Company getCompanyById(UUID id) {
         return companyRepository.getOne(id);
     }
 
@@ -25,7 +26,9 @@ public class CompanyService {
         return companyRepository.findAll();
     }
 
-    public void deleteCompany(long id) {
+    public void deleteCompanyById(UUID id) {
         companyRepository.deleteById(id);
     }
+
+    public void deleteCompany(Company company) {companyRepository.delete(company);}
 }

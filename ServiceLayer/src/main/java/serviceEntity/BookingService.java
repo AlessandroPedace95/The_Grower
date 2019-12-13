@@ -7,6 +7,7 @@ import repository.BookingRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class BookingService {
@@ -18,7 +19,7 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
-    public Booking getBookingById(long id) {
+    public Booking getBookingById(UUID id) {
         return bookingRepository.getOne(id);
     }
 
@@ -26,7 +27,9 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
-    public void deleteBooking(long id) {
+    public void deleteBooking(UUID id) {
         bookingRepository.deleteById(id);
     }
+
+    public void deleteBooking(Booking booking) { bookingRepository.delete(booking);}
 }
