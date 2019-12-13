@@ -2,10 +2,10 @@ package controllersEntity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-import serviceEntity.LandService;
+import serviceEntityImp.LandServiceImp;
 
 @RestController
 public class LandController {
     @Autowired
-    LandService landService;
+    LandServiceImp landService;
 }

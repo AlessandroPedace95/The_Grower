@@ -1,4 +1,4 @@
-package repositoryTest;
+package repository;
 
 import configuration.TestConfiguration;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

@@ -1,7 +1,8 @@
-package entityTest;
+package entity;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CompanyTest {
+class LandTest {
+
 }

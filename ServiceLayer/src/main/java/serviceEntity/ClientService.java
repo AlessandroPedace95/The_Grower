@@ -1,35 +1,19 @@
 package serviceEntity;
 
 import entity.Client;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import repository.ClientRepository;
 
 import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
-@Service
-public class ClientService {
+public interface ClientService {
+    public Client createClient(@Valid Client client);
 
-    @Autowired
-    ClientRepository clientRepository;
+    public Client getClientById(UUID id);
 
-    public Client createClient(@Valid Client client) {
-        return clientRepository.save(client);
-    }
+    public List<Client> getClients();
 
-    public Client getClientById(UUID id) {
-        return clientRepository.getOne(id);
-    }
+    public void deleteClientById(UUID id);
 
-    public List<Client> getClients() {
-        return clientRepository.findAll();
-    }
-
-    public void deleteClientById(UUID id) {
-        clientRepository.deleteById(id);
-    }
-
-    public void deleteClient(Client client) {clientRepository.delete(client);}
+    public void deleteClient(Client client);
 }
